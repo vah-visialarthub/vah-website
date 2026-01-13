@@ -77,61 +77,64 @@ body {
 }
 
 /* =========================
-   HERO SECTION
+   HERO BANNER
 ========================= */
 .hero {
+  position: relative;
+  min-height: 85vh;
+  background: url("../images/Hero banner_Web.png") center right / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--text)
+    to right,
+    rgba(59, 73, 83, 0.88),
+    rgba(59, 73, 83, 0.35)
   );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
   color: var(--white);
-  padding: 90px 0;
-  text-align: center;
 }
 
 .hero h2 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 15px;
 }
 
 .hero p {
-  max-width: 600px;
-  margin: auto;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
   opacity: 0.95;
 }
 
 /* =========================
-   BUTTONS
+   WHATSAPP IMAGE BUTTON
 ========================= */
-.btn {
-  padding: 12px 22px;
-  margin: 15px 8px 0;
-  border-radius: 25px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+.hero-buttons {
+  display: flex;
+  align-items: center;
 }
 
-.primary {
-  background: var(--secondary);
-  color: var(--white);
+.whatsapp-image-btn img {
+  height: 60px;
+  width: auto;
+  border-radius: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.primary:hover {
-  background: #7f9e7c;
-}
-
-.secondary {
-  border: 1px solid var(--white);
-  color: var(--white);
-}
-
-.secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
+.whatsapp-image-btn img:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================
