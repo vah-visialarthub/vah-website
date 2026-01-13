@@ -1,11 +1,16 @@
 /* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+
+/* =========================
    COLOR SYSTEM
 ========================= */
 :root {
   --bg: #EBF4DD;
   --primary: #5A7863;
   --secondary: #90AB8B;
-  --text: #3B4953;
+  --text: #2f3e46;
   --white: #ffffff;
   --whatsapp: #25D366;
 }
@@ -20,8 +25,8 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
 }
@@ -50,14 +55,14 @@ body {
 }
 
 .logo {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 700;
   color: var(--white);
 }
 
 .header nav a {
   color: var(--white);
-  margin-left: 20px;
+  margin-left: 22px;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.3s ease;
@@ -69,72 +74,77 @@ body {
 
 .whatsapp-btn {
   background: var(--whatsapp);
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 10px 22px;
+  border-radius: 25px;
   color: var(--white);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
+  font-weight: 600;
 }
 
 /* =========================
-   HERO BANNER
+   HERO SECTION
 ========================= */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 90vh;
   background: url("../images/Hero banner_Web.png") center right / cover no-repeat;
   display: flex;
   align-items: center;
 }
 
-.hero-overlay {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(59, 73, 83, 0.88),
-    rgba(59, 73, 83, 0.35)
+    90deg,
+    rgba(0, 0, 0, 0.55) 35%,
+    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 620px;
+  max-width: 520px;
   color: var(--white);
 }
 
 .hero h2 {
-  font-size: 2.8rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 1.15rem;
   opacity: 0.95;
+  margin-bottom: 35px;
 }
 
 /* =========================
-   WHATSAPP IMAGE BUTTON
+   WHATSAPP HERO BUTTON
 ========================= */
-.hero-buttons {
-  display: flex;
+.hero-whatsapp-btn {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 18px 38px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: url("../images/Button.png") center / contain no-repeat;
+  min-width: 260px;
+  min-height: 70px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.whatsapp-image-btn img {
-  height: 60px;
-  width: auto;
-  border-radius: 35px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-image-btn img:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+.hero-whatsapp-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(37, 211, 102, 0.45);
 }
 
 /* =========================
@@ -150,26 +160,15 @@ body {
 .why h3,
 .products h3,
 .instagram h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
-.why p,
-.products p,
-.instagram p {
-  max-width: 600px;
-  margin: auto;
-  opacity: 0.85;
-}
-
-/* =========================
-   GRIDS
-========================= */
 .why-grid,
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  gap: 22px;
   margin-top: 40px;
 }
 
@@ -178,15 +177,16 @@ body {
 ========================= */
 .product-card {
   background: var(--white);
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  padding: 26px;
+  border-radius: 18px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
 }
 
 /* =========================
@@ -196,6 +196,33 @@ body {
   background: var(--primary);
   color: var(--white);
   text-align: center;
-  padding: 25px 0;
+  padding: 28px 0;
   font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    background-position: center;
+    min-height: 85vh;
+  }
+
+  .hero::before {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
